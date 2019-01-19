@@ -1,18 +1,21 @@
 {
-  "name": "nodepop",
+  "name": "legopop",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "cross-env DEBUG=nodeapi:* nodemon"
+    "dev": "cross-env DEBUG=nodeapi:* nodemon",
+    "installDB": "node ./scripts/installDB"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
+    "cross-env": "~5.2.0",
     "debug": "~2.6.9",
     "ejs": "~2.5.7",
     "express": "~4.16.0",
+    "express-validator": "~5.3.1",
     "http-errors": "~1.6.2",
-    "mongoose": "^5.4.4",
+    "mongoose": "~5.4.4",
     "morgan": "~1.9.0"
   }
 }

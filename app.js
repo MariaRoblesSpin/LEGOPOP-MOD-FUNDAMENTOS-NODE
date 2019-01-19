@@ -16,15 +16,22 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+/**
+ * Conexión a la base de datos
+ */
+require('./lib/connectMongoose')
+require('./models/Anuncio')
+
+
 // request se suele escribir req y response res
-app.use((request, response, next) => {
+app.use((req, res, next) => {
   // tengo que responder o llamar a next
-  console.log('recibimos una petición')
+  console.log('Recibimos una petición inicial')
   next();
 } )
 
 // Variables globales de la página
-app.locals.titulo = 'nodePOP'
+app.locals.titulo = 'LEGOPOP'
 
 /**
  * rutas de nuestra aplicación web

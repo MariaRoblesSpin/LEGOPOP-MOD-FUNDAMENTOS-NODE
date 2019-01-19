@@ -1,0 +1,23 @@
+[
+    {
+        "nombre": "huida de tatooine",
+        "venta": true,
+        "precio": 15,
+        "foto": "huida_tatooine.jpg",
+        "tags": ["Droides", "R2-D2", "C-3PO", "Tatooine", "Tropas imperiales", "Resistencia"]
+    },
+    {
+        "nombre": "ala-X",
+        "venta": true,
+        "precio": 55,
+        "foto": "ala_x.jpg",
+        "tags": ["R2-D2", "Naves", "Tropas rebeldes", "Resistencia", "Luke Skywalker"]
+    },
+    {
+        "nombre": "AT-AT batalla en Hoth",
+        "venta": true,
+        "precio": 5,
+        "foto": "ala_x.jpg",
+        "tags": ["Hoth", "Naves", "Tropas imperiales"]
+    }
+]
