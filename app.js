@@ -20,7 +20,7 @@ app.use(express.static(path.join(__dirname, 'public')));
  * Conexión a la base de datos
  */
 require('./lib/connectMongoose')
-require('./models/Anuncio')
+require('./models/Ad')
 
 
 // request se suele escribir req y response res
@@ -32,6 +32,11 @@ app.use((req, res, next) => {
 
 // Variables globales de la página
 app.locals.titulo = 'LEGOPOP'
+
+/**
+ * rutas de nuestro API
+*/
+app.use('/API/ads', require('./routes/API/ads'));
 
 /**
  * rutas de nuestra aplicación web
