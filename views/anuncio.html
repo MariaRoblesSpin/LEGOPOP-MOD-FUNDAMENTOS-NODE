@@ -1,0 +1,12 @@
+<section class="anuncio">
+	<img src="../images/ads/<%= anuncio.foto %>">
+	<p><strong>Nombre del producto:</strong> <%= anuncio.nombre %></p>
+	<% if (anuncio.venta === true) { %>
+		<p>Producto en venta</p>
+		<p><%= anuncio.precio %> €</p>
+	<% } else { %>
+		<p>Se busca</p>
+		<p>Podría pagar hasta <%= anuncio.precio %> €</p>
+	<% } %>
+	<p><strong>Tags:</strong> <%= anuncio.tags.join(", "); %></p>
+</section>

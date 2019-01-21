@@ -2,16 +2,18 @@
 
 const express = require('express')
 const router = express.Router()
-const Ad = require('../../models/Ad')
+const Anuncio = require('../../models/Anuncio')
 
 // para recoger los filtros de las consultas al API
 router.get('/', async (req, res, next) => {
 	try {
-		const name = req.query.name
-		const sale = req.query.sale
-		const price = req.query.price
+		console.log('Pasa por anuncios!!!')
+		const nombre = req.query.nombre
+		const venta = req.query.venta
+		const precio = req.query.precio
 		const tags = req.query.tags
 		// hasta aquí quedan definidas todas las constantes por las que se van a poder hacer consultas 
+		const start = parseInt(req.query.start)
 		const skip = parseInt(req.query.skip)
 		const limit = parseInt(req.query.limit)
 		const fields = req.query.fields
@@ -19,21 +21,22 @@ router.get('/', async (req, res, next) => {
 
 		const filtro = {}
 
-		if (name) {
-			filtro.name = name
+		if (nombre) {
+			filtro.nombre = nombre
 		} 
-		if (sale) {
-			filtro.sale = sale
+		if (venta) {
+			filtro.venta = venta
 		}
-		if (price) {
-			filtro.price = price
+		if (precio) {
+			filtro.precio = precio
 		}
 		if (tags) {
 			filtro.tags = tags
 		}
 		// buscamos anuncios en la base de datos legopop
-		const ads = await Ad.buscar(filtro, skip, limit, fields, sort)
-		res.json({ success: true, results: ads })
+		const anuncios = await Anuncio.buscar(filtro, start, skip, limit, fields, sort)
+
+		res.json({success: true, results: anuncios})
 
 	} catch(err) {
 			next(err)
@@ -43,9 +46,9 @@ router.get('/', async (req, res, next) => {
 router.post('/', async (req, res, next) =>{
 	try{
 		const data = req.body
-		const ad = new Ad(data)
-		const adSaved = await ad.save()
-		res.json({ success: true, results: adSaved})
+		const anuncio = new Anuncio(data)
+		const anuncioGuardado = await anuncio.save()
+		res.json({ success: true, results: anuncioGuardado})
 
 	} catch(err) {
 		next(err)
