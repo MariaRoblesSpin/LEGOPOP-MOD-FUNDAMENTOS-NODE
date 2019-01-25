@@ -1,13 +1,56 @@
+* {
+  padding: 0;
+  margin: 0;
+}
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  
+  height: 100%;
+}
+.wrapper {
+  box-sizing: border-box;
+  margin: 2rem 10rem;
+  height: 100%;
+}
+header, h1, h2, h3, p {
+  margin-bottom: 1rem
+}
+header p{
+  padding: 1rem;
+  border: 2px dashed darkgray;
+  border-radius: 10px
+}
+main {
+  height: 80vh;
+  background-color: coral
+   
+}
+.content-wrapper {
+  background-color: red;
+  height: 70vh;
+}
+.ads-wrapper {
+  display: grid;
+  height: 70vh; 
+  grid-template-columns: repeat(4, 23% [col-start]);
+  grid-template-rows: 80%;
+  grid-column-gap: 2%;
+}
+section.anuncio {
+  border-radius: 5px;
+  width: auto;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 1.5rem;
+  background-color: aqua
 }
 
 a {
   color: #00B7FF;
 }
 img {
-  width: 500px;
+  width: 100%;
   height: auto;
-  background-color: aqua;
+  border-radius: 5px;
+  margin-bottom: 1rem;
 }

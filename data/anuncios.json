@@ -1,23 +1,100 @@
 [
     {
-        "nombre": "huida de tatooine",
+        "nombre": "AT-AT",
         "venta": false,
         "precio": 15,
-        "foto": "photo_ala_x.jpg",
-        "tags": ["Droides", "R2-D2", "C-3PO", "Tatooine", "Tropas imperiales", "Resistencia"]
+        "foto": "at_at.jpg",
+        "tag": ["Droides", "R2-D2", "C-3PO", "Tatooine", "Tropas imperiales", "75075"]
     },
     {
-        "nombre": "ala-X",
+        "nombre": "Caza Estelar ala-X",
         "venta": true,
         "precio": 55,
-        "foto": "photo_ala_x.jpg",
-        "tags": ["R2-D2", "Naves", "Tropas rebeldes", "Resistencia", "Luke Skywalker"]
+        "foto": "caza_etelar_ala_x.jpg",
+        "tag": ["R2-D2", "Naves", "Tropas rebeldes", "Resistencia", "Luke Skywalker", "75218"]
     },
     {
-        "nombre": "AT-AT batalla en Hoth",
+        "nombre": "Jedi Starfighter de Yoda",
+        "venta": false,
+        "precio": 20,
+        "foto": "ala_x.jpg",
+        "tag": ["Hoth", "Naves", "Tropas imperiales", "75168"]
+    },
+    {
+        "nombre": "Transformación de Darth Vader",
         "venta": true,
         "precio": 5,
-        "foto": "photo_ala_x.jpg",
-        "tags": ["Hoth", "Naves", "Tropas imperiales"]
+        "foto": "transformacion_darth_vader.jpg",
+        "tag": ["Hoth", "Naves", "Tropas imperiales", "75183"]
+    },
+    {
+        "nombre": "Duelo en Naboo",
+        "venta": true,
+        "precio": 15,
+        "foto": "duelo_naboo.jpg",
+        "tag": ["Hoth", "Naves", "Tropas imperiales", "75169"]
+    },
+    {
+        "nombre": "Pack de Combate con Soldados Rebeldes",
+        "venta": true,
+        "precio": 12,
+        "foto": "soldados_rebeldes.jpg",
+        "tag": ["Hoth", "Naves", "Tropas imperiales", "75164"]
+    },
+    {
+        "nombre": "Deslizador de Transporte de la Primera Orden",
+        "venta": false,
+        "precio": 12,
+        "foto": "deslizador_primera_orden.jpg",
+        "tag": ["Lado Oscuro", "Tropas imperiales", "Primera Orden", "75166"]
+    },
+    {
+        "nombre": "Atacante Tie",
+        "venta": true,
+        "precio": 7,
+        "foto": "atacante_tie.jpg",
+        "tag": ["Lado Oscuro", "Tropas imperiales", "Microfighter", "75161"]
+    },
+    {
+        "nombre": "Ala-U",
+        "venta": true,
+        "precio": 7,
+        "foto": "ala_u.jpg",
+        "tag": ["Lado Oscuro", "Tropas imperiales", "Microfighter", "75160"]
+    }, 
+    {
+        "nombre": "Halcón Milenario",
+        "venta": true,
+        "precio": 17,
+        "foto": "halcon_milenario.jpg",
+        "tag": ["Lado Oscuro", "Tropas imperiales", "Microfighter", "75193"]
+    },
+    {
+        "nombre": "Cápsula de Escape vs. Dewback",
+        "venta": true,
+        "precio": 17,
+        "foto": "capsula_escape.jpg",
+        "tag": ["Lado Oscuro", "Tropas imperiales", "Microfighter", "75228"]
+    },
+    {
+        "nombre": "Lanzadera imperial de Krennic",
+        "venta": true,
+        "precio": 17,
+        "foto": "lanzadera_imperial_krennic.jpg",
+        "tag": ["Lado Oscuro", "Tropas imperiales", "Microfighter", "75163"]
+    },
+    {
+        "nombre": "Ala-x",
+        "venta": true,
+        "precio": 17,
+        "foto": "ala_x.jpg",
+        "tag": ["Lado Oscuro", "Tropas imperiales", "Microfighter", "75125"]
+    },
+    {
+        "nombre": "Prototipo Avanzado Tie",
+        "venta": true,
+        "precio": 17,
+        "foto": "prototipo_avanzado_tie.jpg",
+        "tag": ["Lado Oscuro", "Tropas imperiales", "Microfighter", "75128"]
     }
 ]

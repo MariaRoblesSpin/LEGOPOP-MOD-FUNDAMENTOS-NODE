@@ -5,33 +5,38 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <header>
-      <h1><%= titulo %></h1>
-      <p>Bienvenidos a <%= titulo %>: una API para ayudarte a desarrollar un producto de compra/venta de legos de Star Wars de segunda mano.</p>
-    </header>
-    <main>
+    <div class="wrapper">
       <header>
-        <h2>Documentación</h2>
-        <p>Para acceder a la documentación de la API presiona el siguiente <a href="#" target="_blank">enlace</a></p>
+        <h1><%= titulo %></h1>
+        <p>Bienvenidos a <%= titulo %>: una API para ayudarte a desarrollar un producto de compra/venta de legos de Star Wars de segunda mano.</p>
       </header>
-      <div class="content-wrapper">
-        <% anuncios.forEach( anuncio => { %>
-          <% console.log(anuncio) %>
-          <section class="anuncio">
-              <img src="../images/anuncios/<%= anuncio.foto %>">
-              <% console.log(anuncio.nombre) %>
-              <p><strong>Nombre del producto:</strong> <%= anuncio.nombre %></p>
+      <main>
+        <header>
+          <h2>Documentación</h2>
+          <p>Para acceder a la documentación de la API presiona el siguiente <a href="#" target="_blank">enlace</a></p>
+        </header>
+        <div class="content-wrapper">
+          <h2>Anuncios de prueba</h2>
+          <p>Prueba alguno de los filtros disponibles en la API</p>
+          <div class="ads-wrapper">
+          <% anuncios.forEach( anuncio => { %>
+            <% console.log(anuncio) %>
+            <section class="anuncio">
+              <img src="../images/anuncios/<%= anuncio.foto %>"/>
+              <h3><strong>Nombre del producto:</strong><br/> <%= anuncio.nombre %></h3>
               <% if (anuncio.venta === true) { %>
-                <p>Producto en venta</p>
+                <p class="titulo"><strong>Producto en venta</strong></p>
                 <p><%= anuncio.precio %> €</p>
               <% } else { %>
-                <p>Se busca</p>
-                <p>Podría pagar hasta <%= anuncio.precio %> €</p>
+                <p class="titulo"><strong>Se busca</strong></p>
+                <p>Podría pagar hasta <strong><%= anuncio.precio %> €</strong></p>
               <% } %>
-              <p><strong>Tags:</strong> <%= anuncio.tags.join(", "); %></p>
+              <p><strong>Tags:</strong> <%= anuncio.tag.join(", "); %></p>
             </section>
-        <% }); %>
-      </div>
-    </main>
+            <% }); %>
+          </div>
+        </div>
+      </main>
+    </div>
   </body>
 </html>

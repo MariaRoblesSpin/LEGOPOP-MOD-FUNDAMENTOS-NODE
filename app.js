@@ -37,12 +37,13 @@ app.locals.titulo = 'LEGOPOP'
 /**
  * rutas de nuestro API
 */
-app.use('/API/anuncios', require('./routes/API/anuncios'));
+app.use('/legopop/api', require('./routes/api/anuncios'));
+
 
 /**
  * rutas de nuestra aplicación web
 */
-app.use('/', require('./routes/index'));
+app.use('/legopop', require('./routes/index'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -67,7 +68,8 @@ app.use(function(err, req, res, next) {
   
   // render the error page
   res.status(err.status || 500);
-// si es una petición a la API
+
+// si es una petición a la API respondo con json
   if (isAPIRequest(req)){
     res.json({ success: false, error: err.message })
     return
@@ -81,6 +83,6 @@ app.use(function(err, req, res, next) {
 });
 
 function isAPIRequest(req){
-   return req.originalUrl.indexOf('/API') === 0
+   return req.originalUrl.indexOf('/api') === 0
 }
 module.exports = app;
