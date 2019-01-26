@@ -40,14 +40,11 @@ function askUser(question){
 }
 
 async function initDB(){
-	let anunciostoString = JSON.stringify(anunciosData)
-	let anunciosLowerCase = anunciostoString.toLowerCase()
-	let anunciosJSON = JSON.parse(anunciosLowerCase)
 	console.log('Procedemos al borrado de la base de datos')
 	// primero borrar todos los anuncios que existan
 	const deleted = await Anuncio.deleteMany()
 	console.log(`Eliminados ${deleted.n} anuncios`)
 	// después cargar los anuncios que están en el json
-	const inserted = await Anuncio.insertMany(anunciosJSON)
+	const inserted = await Anuncio.insertMany(anunciosData)
 	console.log(`Insertados ${inserted.length} anuncios`)
 }

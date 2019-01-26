@@ -5,10 +5,10 @@ const mongoose = require('mongoose')
 //definimos el esquema 
 const anuncioSchema = mongoose.Schema ({
   nombre: { type: String, index: true, required: true},
-  venta: { type: Boolean, index: true, required: true },
-  precio: { type: Object, index: true, required: true },
-  foto: { type: String, required: true, lowercase: true},
-  tag: { type: [String], index: true, required: true, lowercase: true}
+  venta: { type: Boolean, index: true, required: true},
+  precio: { type: Object, index: true, required: true},
+  foto: { type: String, required: true},
+  tag: { type: [String], index: true, required: true}
 }) 
 
 anuncioSchema.statics.buscar = (filtro, skip, limit, fields, sort) => {

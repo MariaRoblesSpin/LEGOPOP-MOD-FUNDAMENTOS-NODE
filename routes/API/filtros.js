@@ -42,35 +42,33 @@ function filtros (req) {
 		}
 	}
 	if (tag) {
-		// Falta hacerlo case insensitive: creo que estoy cerca
-		async function tagsCaseInsensitive(){
-			let valoresTags = await Anuncio.distinct('tag')
-			valoresTags.forEach(valor => {
-				if ( typeof valor !== Number) {
-					valor = valor.toLowerCase()
-				}
-				console.log('qué es valor: ', tag)
-				console.log('qué es tag: ', tag)
-				tag = tag.toLowerCase()
-				if (valor === tag) {
-					return tag
-				}
-			})
-		}
-		tagsCaseInsensitive()
-		filtro.tag = { $all: tag}
+		// Falta hacerlo case insensitive: creo que estoy cerc
+	
+		//(/^a/i)
+		let buscarTags = new RegExp('^' + tag, 'i')
+		let re = buscarTags
+		// filtro.tag = { $all: tag }
+		filtro.tag = { $all:  tag }
+		
 	}
 	if (sort) {
+		try{
+			if (sort.indexOf('=') !== -1 ) {
+				throw ('Not valid: try ":" instead "="')
+			} 
+		} catch(err) {
+			console.log('Entra en catch: ', err)
+		}
+		
+		
 		if (sort === 'nombre:1'){
 			sort = { nombre: 1 }
 		} else if (sort === 'nombre:-1'){
 			sort = { nombre: -1 }
 		} else if (sort === 'nombre'){
 			sort = { nombre: 1 }
-		} else if (sort === 'nombre=') {
-			// throw (err)  'Not valid: try ":" instead "="')
-		}
-
+		} 
+		
 		if (sort === 'precio:1'){
 			sort = { precio: 1 }
 		} else if (sort === 'precio:-1'){

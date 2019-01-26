@@ -32,14 +32,14 @@
         "venta": true,
         "precio": 15,
         "foto": "duelo_naboo.jpg",
-        "tag": ["Hoth", "Naves", "Tropas imperiales", "75169"]
+        "tag": ["Darth Maul", "Qui Gon Jin", "Obi Wan Kenobi", "Jedis", "Naboo", "75169"]
     },
     {
         "nombre": "Pack de Combate con Soldados Rebeldes",
         "venta": true,
         "precio": 12,
         "foto": "soldados_rebeldes.jpg",
-        "tag": ["Hoth", "Naves", "Tropas imperiales", "75164"]
+        "tag": ["Soldados", "Resistencia", "Tropas rebeldes", "75164"]
     },
     {
         "nombre": "Deslizador de Transporte de la Primera Orden",
