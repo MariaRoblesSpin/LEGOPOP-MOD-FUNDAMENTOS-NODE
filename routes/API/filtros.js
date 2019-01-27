@@ -41,35 +41,25 @@ function filtros (req) {
 		} else {
 			filtro.precio = parseInt(precio)
 		}
-
 	}
 	if ( precio == 'null' || precio == '0') {
-		filtro.precio = null;
+		filtro.precio = null
 	}
 	if (typeof tag !== 'undefined') {
-		// Falta hacerlo case insensitive: creo que estoy cerca
-		//(/^a/i)
-		console.log('typeof tag ', typeof tag)
-		if (Array.isArray(tag)){
-			// let nuevoArray = []
-			// // algo pasa con tag. Aunque es un array no parece reconocerlo como tal
- 			// tag.forEach((element, arrayQuery) => {
-			// 	 element = new RegExp('^' + element, 'i')
-			// 	 nuevoArray = arrayQuery.push(element)
-			//  });
-			//  filtro.tag = { $in: nuevoArray }
-			console.log('tag dentro de array ', tag)
+		// Filtrado por varios tags en case insensitive
+		//estructura expresion regular necesaria(/^a/i)
+		if (Array.isArray(tag)){ 
+			var nuevoArray = []
+ 			tag.forEach((element, indice, arrayQuery) => {
+				 element = new RegExp('^' + element, 'i')
+				 nuevoArray = arrayQuery.push(element)
+			 });
 			filtro.tag = { $in: tag }
-			console.log('tag dentro de array ', filtro.tag)
-			 //console.log('valor de nuevo array, espero un array', nuevoArray)
-			 
-
 		} else if (typeof tag === 'string'){
 			let regExpTag = new RegExp('^' + tag, 'i')
 			filtro.tag = regExpTag
 			console.log('valor de regExp', regExpTag)
-		}
-		
+		}	
 	}
 	if (sort) {
 		try{
