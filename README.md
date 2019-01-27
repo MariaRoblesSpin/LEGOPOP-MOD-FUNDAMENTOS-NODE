@@ -91,29 +91,45 @@ Podría emplearse por ejemplo ala_x.jpg
 
 ### Ejemplos de mezcla de diferentes filtros
 
-http://localhost:3000/legopop/api/anuncios?tag=naves&tag=resistencia
-http://localhost:3000/legopop/api/anuncios?tag=microfighter&nombre=ala&precio=5-20&limit=2&sort=precio
-http://localhost:3000/legopop/api/anuncios?precio=17&tag=nave&tag=tropas
-http://localhost:3000/legopop/api/anuncios?skip=5&limit=5
-http://localhost:3000/legopop/api/anuncios?tag=microfighter&nombre=ala&precio=5-20&skip=1&limit=2&sort=precio
-http://localhost:3000/legopop/api/anuncios?precio=12-&nombre=ala
-http://localhost:3000/legopop/api/anuncios?precio=-12&nombre=ala
-http://localhost:3000/legopop/api/anuncios?precio=-12&tag=micro
-http://localhost:3000/legopop/api/anuncios?tag=micro&nombre=ala
-http://localhost:3000/legopop/api/anuncios?tag=micro&nombre=ala&venta=true
-http://localhost:3000/legopop/api/anuncios?tag=micro&nombre=ala&venta=true&sort=precio:-1
+* http://localhost:3000/legopop/api/anuncios?tag=naves&tag=resistencia
+
+* http://localhost:3000/legopop/api/anuncios?tag=microfighter&nombre=ala&precio=5-20&limit=2&sort=precio
+
+* http://localhost:3000/legopop/api/anuncios?precio=17&tag=nave&tag=tropas
+
+* http://localhost:3000/legopop/api/anuncios?skip=5&limit=5
+
+* http://localhost:3000/legopop/api/anuncios?tag=microfighter&nombre=ala&precio=5-20&skip=1&limit=2&sort=precio
+
+* http://localhost:3000/legopop/api/anuncios?precio=12-&nombre=ala
+
+* http://localhost:3000/legopop/api/anuncios?precio=-12&nombre=ala
+
+* http://localhost:3000/legopop/api/anuncios?precio=-12&tag=micro
+
+* http://localhost:3000/legopop/api/anuncios?tag=micro&nombre=ala
+
+* http://localhost:3000/legopop/api/anuncios?tag=micro&nombre=ala&venta=true
+
+* http://localhost:3000/legopop/api/anuncios?tag=micro&nombre=ala&venta=true&sort=precio:-1
 
 **Para paginación: skip limit**
-http://localhost:3000/legopop/anuncios?limit=4
-http://localhost:3000/legopop/anuncios?skip=4&limit=4
-http://localhost:3000/legopop/anuncios?skip=8&limit=4
-http://localhost:3000/legopop/anuncios?skip=12&limit=4
-http://localhost:3000/legopop/anuncios?skip=16&limit=4
+
+* http://localhost:3000/legopop/anuncios?limit=4
+
+* http://localhost:3000/legopop/anuncios?skip=4&limit=4
+
+* http://localhost:3000/legopop/anuncios?skip=8&limit=4
+
+* http://localhost:3000/legopop/anuncios?skip=12&limit=4
+
+* http://localhost:3000/legopop/anuncios?skip=16&limit=4
 
 
 ## Validación errores en la API
 
 Se valida la existencia de un valor para todos los campos en la API. 
+
 Si no encuentra un valor la API devuelve un error tipo JSON con una estructura de este tipo y aporta información adicional en función del valor no encontrado:
 
 **consulta sin valor para tag**
@@ -162,6 +178,14 @@ http://localhost:3000/legopop/api/anuncios?limit
 http://localhost:3000/legopop/api/anuncios?fields
 
 
+## Validación código con EsLint sobre los siguientes archivos
+He pasado el comando --fix sobre todos estos archivos y he corregido después los errores pertinentes.
+
+* ./node_modules/.bin/eslint app.js
+* ./node_modules/.bin/eslint ./models/Anuncio.js
+* ./node_modules/.bin/eslint ./routes/api/filtros.js
+* ./node_modules/.bin/eslint ./routes/api/anuncios.js
+* ./node_modules/.bin/eslint ./scripts/installDB.js
 
 
 
