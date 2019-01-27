@@ -37,18 +37,20 @@ app.locals.titulo = 'LEGOPOP'
 /**
  * rutas de nuestro API
 */
-app.use('/legopop/api', require('./routes/api/anuncios'));
+app.use('/legopop/api/anuncios', require('./routes/api/anuncios'));
 
 
 /**
  * rutas de nuestra aplicación web
 */
-app.use('/legopop', require('./routes/index'));
+app.use('/legopop/anuncios', require('./routes/index'));
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
+app.use(function (req, res, next) {
+  var err = new Error('Not Found')
+  err.status = 404
+  next(err)
+})
 
 // error handler
 app.use(function(err, req, res, next) {

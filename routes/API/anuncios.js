@@ -10,9 +10,14 @@ router.get('/', async (req, res, next) => {
 		console.log('Pasa por anuncios!!!')
 		const anuncios = await filtros(req)
 		res.json({success: true, results: anuncios})
+		
+		// Status code 204: Content not found
+		if ( anuncios.length === 0 ) {
+			res.status(204);
+		}
 	} catch(err) {
-			next(err)
-			return
+		next(err)
+		return
 	}
 })
 router.get('/tags', async (req, res, next) => {
@@ -21,12 +26,17 @@ router.get('/tags', async (req, res, next) => {
 	const valoresTags = await Anuncio.distinct('tag')
 	res.json({success: true, results: valoresTags})
 	
+	// Status code 204: Content not found
+	if ( valoresTags.length === 0 ) {
+		res.status(204);
+	}
+	
 	} catch(err) {
 		next(err)
 		return
 	}
 })
-router.post('/', async (req, res, next) =>{
+router.post('/nuevoanuncio', async (req, res, next) =>{
 	try{
 		const data = req.body
 		const anuncio = new Anuncio(data)

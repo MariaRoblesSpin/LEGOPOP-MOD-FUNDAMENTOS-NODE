@@ -8,15 +8,17 @@ const anuncioSchema = mongoose.Schema ({
   venta: { type: Boolean, index: true, required: true},
   precio: { type: Object, index: true, required: true},
   foto: { type: String, required: true},
-  tag: { type: [String], index: true, required: true}
+  tag: { type: [], index: true, required: true}
 }) 
 
-anuncioSchema.statics.buscar = (filtro, skip, limit, fields, sort) => {
+anuncioSchema.statics.buscar = (filtro, skip, limit,  sort, fields) => {
   const query = Anuncio.find(filtro)
   query.skip(skip)
   query.limit(limit)
-  query.select(fields)
   query.sort(sort)
+  query.select(fields)
+
+  //query.where('tag').all(tag)
   
   return query.exec()
 }

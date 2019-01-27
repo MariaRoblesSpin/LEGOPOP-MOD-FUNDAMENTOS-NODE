@@ -12,7 +12,7 @@ router.get('/', async (req, res, next) => {
     const anuncios = await filtros(req)
     // variables para la plantilla ejs 
     res.locals.anuncios = anuncios
-    res.render('index');
+	res.render('index');
 
 	} catch(err) {
 		next(err)
