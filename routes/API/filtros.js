@@ -46,12 +46,12 @@ console.log ('valor req.query: ', req.query)
 			let valorMenor = precioString.substring(posicionGuion+1)
 			filtro.precio = { $lte: parseInt(valorMenor) }
 		} else if (regexpMayorMenor.test(precioString)) {
-			console.log('Entra en rango: ', regexpMayor)
+			console.log('Entra en rango: ', regexpMayorMenor)
 			let valorMenor = precioString.substring(0, posicionGuion)
 			let valorMayor = precioString.substring(posicionGuion+1)
 			filtro.precio = { $gte: parseInt(valorMenor), $lte: parseInt(valorMayor)}
 		} else if (regexpDigito.test(precioString)) {
-			console.log('Concreto: ', regexpMayor)
+			console.log('Concreto: ', regexpDigito)
 			filtro.precio = parseInt(precio)
 		}
 	}
@@ -94,10 +94,10 @@ console.log ('valor req.query: ', req.query)
 		}
 
 	}
-	console.log('Llega a new error')
-	if (!(Object.keys(req.query).length === 0) && !nombre && !precio && !tag && !venta && !fields && !skip && !limit && !sort){
-		throw new Error ('Petición incorrecta')
-	}
+	// console.log('Llega a new error')
+	// if (!(Object.keys(req.query).length === 0) && !nombre && !precio && !tag && !venta && !fields && !skip && !limit && !sort){
+	// 	throw new Error ('Petición incorrecta')
+	// }
 	
 
 	// buscamos anuncios en la base de datos legopop

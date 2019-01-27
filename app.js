@@ -83,6 +83,6 @@ app.use(function(err, req, res, next) {
 });
 
 function isAPIRequest(req){
-   return req.originalUrl.indexOf('/api') === 0
+   return req.originalUrl.indexOf('/legopop/api') === 0
 }
 module.exports = app;

@@ -1,12 +1,28 @@
 const express = require('express')
 const router = express.Router()
+const { query, validationResult } = require('express-validator/check')
 
 const Anuncio = require('../../models/Anuncio')
 const filtros = require('./filtros')
 
 // para recoger los filtros de las consultas al API
-router.get('/', async (req, res, next) => {
+router.get('/',[
+	query('precio').optional().not().isEmpty().withMessage('Necesita un valor. Búsquedas por precio: valor, valor-, -valor, valor-valor'),
+	query('nombre').optional().not().isEmpty().withMessage('Necesita un valor: string.'),
+	query('venta').optional().not().isEmpty().withMessage('Necesita un valor: boolean.'),
+	query('tag').optional().not().isEmpty().withMessage('Necesita un valor o varios: strings. ?tag=valor&tag=valor'),
+	query('sort').optional().not().isEmpty().withMessage('Necesita un valor: nombre o precio.'),
+	query('limit').optional().not().isEmpty().withMessage('Necesita un valor: Number.'),
+	query('skip').optional().not().isEmpty().withMessage('Necesita un valor: Number.'),
+	query('fields').optional().not().isEmpty().withMessage('Necesita uno o vario de los campos que contiene el anuncio: nombre, precio, venta, foto, tag, codigo.')
+
+], async (req, res, next) => {
 	try {
+		validationResult(req).throw() //lanza una excepción si hay errores de validación
+		// menor /^-d*/
+		// mayor /d*-$/
+		// rango /^\d*-d*/
+		// digito  /d*$/
 		console.log('Pasa por anuncios!!!')
 		const anuncios = await filtros(req)
 		res.json({success: true, results: anuncios})
@@ -16,8 +32,6 @@ router.get('/', async (req, res, next) => {
 		// 	res.status(204);
 		// }
 	} catch(err) {
-		console.log('Llega a catch en anuncios', err)
-
 		next(err)
 		return
 	}
