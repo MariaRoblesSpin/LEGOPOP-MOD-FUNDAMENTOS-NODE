@@ -23,6 +23,7 @@ En desarrollo:
 ```shell
 npm run dev
 ```
+Con la aplicación arrancada se puede proceder a la comprobación de todos los ejemplos.
 
 ## Vista
 Dirección de acceso
@@ -36,7 +37,12 @@ La vista permite las mismas consultas que la API menos la creación de anuncios 
 Ejemplos:
 **Se pueden consultar sobre la propia vista**
 
+
 ## API 
+**Ruta de acceso**
+
+http://localhost:3000/legopop/api/anuncios
+
 **La API Legopop permite las siguientes operaciones**
 
 ### Por rutas
@@ -47,8 +53,18 @@ Ejemplos:
 |   /api/anucios/tags	        |   Lista todos los tags	    |   GET             |
 |   /api/anuncios/nuevoanuncio  |	Crea un nuevo anuncio 	    |   POST            |
 
+**Lista de tags**
+
+http://localhost:3000/legopop/api/anuncios/tags
+
+**Creación de anuncio**
+
 Para la comprobación de la creación de un nuevo anuncio se recomienda en uso de postman.
 https://www.getpostman.com/
+
+Petición por post.
+
+http://localhost:3000/legopop/api/anuncios/nuevoanuncio
 
 Los campos que hay que rellenar en body/x-www-form-urlencoded son:
 * nombre: string.
@@ -89,15 +105,13 @@ Podría emplearse por ejemplo ala_x.jpg
 |  limit             |	 api/anuncios?limit=3	                     |   Sólo muestra 3 anuncios                                                    | 
 
 
-### Ejemplos de mezcla de diferentes filtros
+### Enlaces a ejemplos de mezcla de diferentes filtros
 
 * http://localhost:3000/legopop/api/anuncios?tag=naves&tag=resistencia
 
 * http://localhost:3000/legopop/api/anuncios?tag=microfighter&nombre=ala&precio=5-20&limit=2&sort=precio
 
 * http://localhost:3000/legopop/api/anuncios?precio=17&tag=nave&tag=tropas
-
-* http://localhost:3000/legopop/api/anuncios?skip=5&limit=5
 
 * http://localhost:3000/legopop/api/anuncios?tag=microfighter&nombre=ala&precio=5-20&skip=1&limit=2&sort=precio
 
