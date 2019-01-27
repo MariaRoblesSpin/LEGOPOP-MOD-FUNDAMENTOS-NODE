@@ -12,7 +12,7 @@ const anuncioSchema = mongoose.Schema ({
 	codigo: { type: Number, index: true}
 }) 
 
-anuncioSchema.statics.buscar = (filtro, skip, limit,  sort, fields) => {
+anuncioSchema.statics.buscar = (filtro, skip, limit, sort, fields) => {
 	const query = Anuncio.find(filtro)
 	query.skip(skip)
 	query.limit(limit)

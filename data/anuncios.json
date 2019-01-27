@@ -2,7 +2,7 @@
     {
         "nombre": "AT-AT",
         "venta": false,
-        "precio": 15,
+        "precio": 7,
         "foto": "at_at.jpg",
         "tag": ["Tropas imperiales", "Transporte terrestre", "Hoth"],
         "codigo": 75075
@@ -26,7 +26,7 @@
     {
         "nombre": "Transformación de Darth Vader",
         "venta": true,
-        "precio": 5,
+        "precio": 15,
         "foto": "transformacion_darth_vader.jpg",
         "tag": ["Darth Vader", "Estación", "Palpatine"],
         "codigo": 75183
@@ -42,7 +42,7 @@
     {
         "nombre": "Pack de Combate con Soldados Rebeldes",
         "venta": true,
-        "precio": 12,
+        "precio": 10,
         "foto": "soldados_rebeldes.jpg",
         "tag": ["Soldados", "Resistencia", "Transporte terrestre", "Tropas rebeldes"],
         "codigo": 75164
@@ -73,8 +73,8 @@
     }, 
     {
         "nombre": "Halcón Milenario",
-        "venta": true,
-        "precio": 17,
+        "venta": false,
+        "precio": 12,
         "foto": "halcon_milenario.jpg",
         "tag": ["Han solo", "Chewbacca", "Nave", "Microfighter"],
         "codigo": 75193
@@ -90,15 +90,15 @@
     {
         "nombre": "Lanzadera imperial de Krennic",
         "venta": true,
-        "precio": 17,
+        "precio": 7,
         "foto": "lanzadera_imperial_krennic.jpg",
         "tag": ["Krennic", "Lado Oscuro", "Tropas imperiales", "Microfighter"],
         "codigo": 75163
     },
     {
         "nombre": "Ala-x",
-        "venta": true,
-        "precio": 17,
+        "venta": false,
+        "precio": 7,
         "foto": "ala_x.jpg",
         "tag": ["Soldados rebeldes", "Tropas rebeldes", "Microfighter"],
         "codigo": 75125
@@ -106,7 +106,7 @@
     {
         "nombre": "Prototipo Avanzado Tie",
         "venta": true,
-        "precio": 5,
+        "precio": 15,
         "foto": "prototipo_avanzado_tie.jpg",
         "tag": ["Lado Oscuro", "Tropas imperiales", "Microfighter"],
         "codigo": 75128
@@ -130,7 +130,7 @@
     {
         "nombre": "Caza Estelar Naboo",
         "venta": true,
-        "precio": 17,
+        "precio": 5,
         "foto": "caza_estelar_naboo.jpg",
         "tag": ["Anakin Skywalker", "R2-D2", "Naboo", "Microfighter", "Caza Estelar", "Jedi"],
         "codigo": 75223
@@ -138,7 +138,7 @@
     {
         "nombre": "Infiltrador Sith",
         "venta": true,
-        "precio": 17,
+        "precio": 5,
         "foto": "infiltrador_sith.jpg",
         "tag": ["Darth Maul", "Sith", "Lado oscuro", "Infiltrador"],
         "codigo": 75224

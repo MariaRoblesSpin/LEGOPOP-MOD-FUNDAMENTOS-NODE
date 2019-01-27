@@ -7,31 +7,89 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1><%= titulo %></h1>
-        <p>Bienvenidos a <%= titulo %>: una API para ayudarte a desarrollar un producto de compra/venta de legos de Star Wars de segunda mano.</p>
+        <div class="header-wrapper">
+          <figure>
+            <img src="../images/logo_legopop.png" alt="Logotipo LEGOPOP"/>
+          </figure>
+          <h1><%= titulo %></h1>
+          <p class="titulo"><span>Bienvenidos a <%= titulo %></span> Una API para ayudarte a desarrollar un producto de compra/venta de legos de Star Wars de segunda mano.</p>
+        </div>
+        <div class="header-wrapper">
+          <h2>Documentación</h2>
+          <p>Para acceder a la documentación de la API presiona el siguiente <a href="#" target="_blank">enlace</a>.</p>
+          <p class="titulo">Notas</p>
+          <ul>
+            <li><strong>El código</strong> de los filtros <strong>se reutiliza</strong> para el api y la vista.</li>
+            <li>La lista de tags no está limitada. <strong>Se pueden crear todos los tags que se quiera</strong>.</li>
+            <li>Tanto las <strong>búsquedas por nombre</strong> como las <strong>búsquedas por tag</strong> son <strong>case insensitive</strong>.</li>
+            <li>Se pueden hacer también <strong>búsquedas por código</strong>.</li>
+          </ul>
+          
+        </div>
       </header>
       <main>
         <header>
-          <h2>Documentación</h2>
-          <p>Para acceder a la documentación de la API presiona el siguiente <a href="#" target="_blank">enlace</a></p>
+          <h2>Vista de prueba</h2>
+          <p>Prueba alguno de <strong>los siguientes filtros</strong> en la URL:</p>
+          <div class="filtros-wrapper">
+            <section>
+              <h3 class="titulo">Lista completa de anuncios:</h3>
+              <ul>
+                <li><a href="http://localhost:3000/legopop/anuncios">Todos los artículos según están en la base de datos</a></li>
+                <li><a href="http://localhost:3000/legopop/anuncios?sort=nombre">Por orden alfabético</a></li>
+                <li><a href="http://localhost:3000/legopop/anuncios?sort=nombre:-1">Por orden alfabético inverso</a></li>
+                <li><a href="http://localhost:3000/legopop/anuncios?sort=precio">Por precio ascendente</a></li>
+                <li><a href="http://localhost:3000/legopop/anuncios?sort=precio:-1">Por precio descendente</a></li>
+                <li><a href="http://localhost:3000/legopop/anuncios?sort=codigo">Por código ascendente</a></li>
+                <li><a href="http://localhost:3000/legopop/anuncios?sort=codigo:-1">Por código descendente</a></li>
+              </ul>
+            </section>
+            <section>
+              <h3 class="titulo">Por precio:</h3>
+              <ul>
+                <li><a href="http://localhost:3000/legopop/anuncios?precio=12">Artículos de 12€</a></li>
+                <li><a href="http://localhost:3000/legopop/anuncios?precio=-12">Artículos de menos de 12€</a></li>
+                <li><a href="http://localhost:3000/legopop/anuncios?precio=12-17">Artículos de entre 12€ y 17€</a></li>
+                <li><a href="http://localhost:3000/legopop/anuncios?precio=17">Artículos de más 17€</a></li>
+              </ul>
+            </section>
+            <section>
+              <h3 class="titulo">Por diversos filtros combinados:</h3>
+              <ul>
+                <li><a href="http://localhost:3000/legopop/anuncios?precio=-12&tag=micro">Artículos de menos de 12€ con el tag "Microfighter"</a></li>
+                <li><a href="http://localhost:3000/legopop/anuncios?tag=micro&nombre=ala">Artículos con el tag "Microfighter y el nombre que empieze por ala</a></li>
+                <li><a href="http://localhost:3000/legopop/anuncios?tag=micro&nombre=ala&venta=true">Artículos con el tag "Microfighter,el nombre que empieze por ala y que estén en venta</a></li>
+                <li><a href="http://localhost:3000/legopop/anuncios?tag=micro&nombre=ala&venta=true&sort=precio:-1">Artículos con el tag "Microfighter,el nombre que empieze por ala y que estén en venta, por precio descendente</a></li>
+              </ul>
+            </section>
+          </div>
         </header>
         <div class="content-wrapper">
-          <h2>Anuncios de prueba</h2>
-          <p>Prueba alguno de los filtros disponibles en la API</p>
+          <header class="paginacion">
+            <p class="titulo">Ejemplo de paginación por skip y limit</p>
+            <ul>
+              <li><a href="http://localhost:3000/legopop/anuncios?limit=4"> 1</a></li>
+              <li><a href="http://localhost:3000/legopop/anuncios?skip=4&limit=4">2</a></li>
+              <li><a href="http://localhost:3000/legopop/anuncios?skip=8&limit=4">3</a></li>
+              <li><a href="http://localhost:3000/legopop/anuncios?skip=12&limit=4">4</a></li>
+              <li><a href="http://localhost:3000/legopop/anuncios?skip=16&limit=4">5</a></li>
+            </ul>
+          </header>
           <div class="ads-wrapper">
           <% anuncios.forEach( anuncio => { %>
             <% console.log(anuncio) %>
             <section class="anuncio">
               <img src="../images/anuncios/<%= anuncio.foto %>"/>
-              <h3><strong>Nombre del producto:</strong><br/> <%= anuncio.nombre %></h3>
+              <h3 class="titulo"><span>Nombre del producto</span><%= anuncio.nombre %></h3>
               <% if (anuncio.venta === true) { %>
-                <p class="titulo"><strong>Producto en venta</strong></p>
+                <p class="titulo"><span>Producto en venta</span></p>
                 <p><%= anuncio.precio %> €</p>
               <% } else { %>
-                <p class="titulo"><strong>Se busca</strong></p>
-                <p>Podría pagar hasta <strong><%= anuncio.precio %> €</strong></p>
+                <p class="titulo"><span>Se busca</span></p>
+                <p>Podría pagar hasta <span><%= anuncio.precio %> €</span></p>
               <% } %>
-              <p><strong>Tags:</strong> <%= anuncio.tag.join(", "); %></p>
+              <p class="titulo"><span>Tags</span> <%= anuncio.tag.join(", "); %></p>
+              <p class="titulo">Código:<strong><%= anuncio.codigo %></strong></p>
             </section>
             <% }); %>
           </div>

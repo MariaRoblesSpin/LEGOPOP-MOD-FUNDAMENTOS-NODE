@@ -43,9 +43,9 @@ function filtros (req) {
 			filtro.precio = parseInt(precio)
 		}
 	}
-	if ( precio == 'null' || precio == '0') {
-		filtro.precio = null
-	}
+	// if ( precio == 'null' || precio == '0') {
+	// 	filtro.precio = null
+	// }
 	if (codigo) {
 		filtro.codigo = codigo
 	}
@@ -76,6 +76,12 @@ function filtros (req) {
 			sort = { precio: 1 }
 		} else if (sort === 'precio:-1'){
 			sort = { precio: -1 }
+		}
+
+		if (sort === 'codigo' && sort === 'codigo:1'){
+			sort = { codigo: 1 }
+		} else if (sort === 'codigo:-1'){
+			sort = { codigo: -1 }
 		}
 
 	}
