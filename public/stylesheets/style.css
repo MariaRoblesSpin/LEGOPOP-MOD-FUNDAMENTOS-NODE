@@ -4,13 +4,9 @@
 }
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  
-  height: 100%;
 }
 .wrapper {
-  box-sizing: border-box;
   margin: 2rem 10rem;
-  height: 100%;
 }
 header, h1, h2, h3, p {
   margin-bottom: 1rem
@@ -21,25 +17,21 @@ header p{
   border-radius: 10px
 }
 main {
-  height: 80vh;
   background-color: coral
    
 }
 .content-wrapper {
   background-color: red;
-  height: 70vh;
 }
 .ads-wrapper {
   display: grid;
-  height: 70vh; 
-  grid-template-columns: repeat(4, 23% [col-start]);
-  grid-template-rows: 80%;
-  grid-column-gap: 2%;
+  grid-template-columns: repeat(4, 23%);
+  grid-gap: 2%;
 }
 section.anuncio {
   border-radius: 5px;
   width: auto;
-  height: 100%;
+  height: 22rem;
   box-sizing: border-box;
   padding: 1.5rem;
   background-color: aqua

@@ -4,97 +4,111 @@
         "venta": false,
         "precio": 15,
         "foto": "at_at.jpg",
-        "tag": ["Droides", "R2-D2", "C-3PO", "Tatooine", "Tropas imperiales", "75075"]
+        "tag": ["Tropas imperiales", "Transporte terrestre", "Hoth"],
+        "codigo": 75075
     },
     {
-        "nombre": "Caza Estelar ala-X",
+        "nombre": "Ala-X Caza Estelar",
         "venta": true,
         "precio": 55,
         "foto": "caza_etelar_ala_x.jpg",
-        "tag": ["R2-D2", "Naves", "Tropas rebeldes", "Resistencia", "Luke Skywalker", "75218"]
+        "tag": ["R2-D2", "Nave", "Tropas rebeldes", "Resistencia", "Luke Skywalker"],
+        "codigo": 75218
     },
     {
-        "nombre": "Jedi Starfighter de Yoda",
+        "nombre": "Nave Jedi de Yoda",
         "venta": false,
         "precio": 20,
-        "foto": "ala_x.jpg",
-        "tag": ["Hoth", "Naves", "Tropas imperiales", "75168"]
+        "foto": "nave_yoda.jpg",
+        "tag": ["Nave", "Tropas rebeldes"],
+        "codigo": 75168
     },
     {
         "nombre": "Transformación de Darth Vader",
         "venta": true,
         "precio": 5,
         "foto": "transformacion_darth_vader.jpg",
-        "tag": ["Hoth", "Naves", "Tropas imperiales", "75183"]
+        "tag": ["Darth Vader", "Estación", "Palpatine"],
+        "codigo": 75183
     },
     {
         "nombre": "Duelo en Naboo",
         "venta": true,
         "precio": 15,
         "foto": "duelo_naboo.jpg",
-        "tag": ["Darth Maul", "Qui Gon Jin", "Obi Wan Kenobi", "Jedis", "Naboo", "75169"]
+        "tag": ["Darth Maul", "Qui Gon Jinn", "Obi Wan Kenobi", "Jedis", "Naboo"],
+        "codigo": 75169
     },
     {
         "nombre": "Pack de Combate con Soldados Rebeldes",
         "venta": true,
         "precio": 12,
         "foto": "soldados_rebeldes.jpg",
-        "tag": ["Soldados", "Resistencia", "Tropas rebeldes", "75164"]
+        "tag": ["Soldados", "Resistencia", "Transporte terrestre", "Tropas rebeldes"],
+        "codigo": 75164
     },
     {
         "nombre": "Deslizador de Transporte de la Primera Orden",
         "venta": false,
         "precio": 12,
         "foto": "deslizador_primera_orden.jpg",
-        "tag": ["Lado Oscuro", "Tropas imperiales", "Primera Orden", "75166"]
+        "tag": ["Lado Oscuro", "Tropas imperiales", "Transporte terrestre", "Primera Orden"],
+        "codigo": 75166
     },
     {
         "nombre": "Atacante Tie",
         "venta": true,
         "precio": 7,
         "foto": "atacante_tie.jpg",
-        "tag": ["Lado Oscuro", "Tropas imperiales", "Microfighter", "75161"]
+        "tag": ["Lado Oscuro", "Tropas imperiales", "Nave", "Microfighter"],
+        "codigo": 75161
     },
     {
         "nombre": "Ala-U",
         "venta": true,
         "precio": 7,
         "foto": "ala_u.jpg",
-        "tag": ["Lado Oscuro", "Tropas imperiales", "Microfighter", "75160"]
+        "tag": ["Jyn Erso", "Tropas rebeldes", "Nave", "Microfighter"],
+        "codigo": 75160
     }, 
     {
         "nombre": "Halcón Milenario",
         "venta": true,
         "precio": 17,
         "foto": "halcon_milenario.jpg",
-        "tag": ["Lado Oscuro", "Tropas imperiales", "Microfighter", "75193"]
+        "tag": ["Han solo", "Chewbacca", "Nave", "Microfighter"],
+        "codigo": 75193
     },
     {
         "nombre": "Cápsula de Escape vs. Dewback",
         "venta": true,
         "precio": 17,
         "foto": "capsula_escape.jpg",
-        "tag": ["Lado Oscuro", "Tropas imperiales", "Microfighter", "75228"]
+        "tag": ["RD-D2", "C-3PO", "Tropas imperiales", "Tatooine", "Nave", "Dewback"],
+        "codigo": 75228
     },
     {
         "nombre": "Lanzadera imperial de Krennic",
         "venta": true,
         "precio": 17,
         "foto": "lanzadera_imperial_krennic.jpg",
-        "tag": ["Lado Oscuro", "Tropas imperiales", "Microfighter", "75163"]
+        "tag": ["Krennic", "Lado Oscuro", "Tropas imperiales", "Microfighter"],
+        "codigo": 75163
     },
     {
         "nombre": "Ala-x",
         "venta": true,
         "precio": 17,
         "foto": "ala_x.jpg",
-        "tag": ["Lado Oscuro", "Tropas imperiales", "Microfighter", "75125"]
+        "tag": ["Soldados rebeldes", "Tropas rebeldes", "Microfighter"],
+        "codigo": 75125
     },
     {
         "nombre": "Prototipo Avanzado Tie",
         "venta": true,
         "precio": 17,
         "foto": "prototipo_avanzado_tie.jpg",
-        "tag": ["Lado Oscuro", "Tropas imperiales", "Microfighter", "75128"]
+        "tag": ["Lado Oscuro", "Tropas imperiales", "Microfighter"],
+        "codigo": 75128
     }
 ]

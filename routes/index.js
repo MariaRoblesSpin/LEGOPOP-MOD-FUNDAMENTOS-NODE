@@ -15,6 +15,7 @@ router.get('/', async (req, res, next) => {
 	res.render('index');
 
 	} catch(err) {
+		console.log('Llega a catch en index')
 		next(err)
 		return
 	}

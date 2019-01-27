@@ -54,27 +54,30 @@ Ejemplos:
 |   por nombre       |   api/anuncios?nombre=ala                     |   Filtro por string. No es necesario el nombre completo. Case insensitive.   |
 |   por precio	     |   api/anuncios?precio=7	                     |   Precio = valor.                                                            |
 |   ^                |	 api/anuncios?precio=7-35 	                 |   Por rango de precio                                                        |
-|   ^                |	 api/anuncios?precio=7-	                     |   Precio > valor                                                             |
-|   ^                |	 api/anuncios?precio=-7	                     |   Precio < valor                                                             |
+|   ^                |	 api/anuncios?precio=7-	                     |   Precio > valor  NO FUNCIONA AÚN                                            |
+|   ^                |	 api/anuncios?precio=-7	                     |   Precio < valor  NO FUNCIONA AÚN                                            |
 |   por tag          |	 api/anuncios?tag=naves	                     |   Filtro por string. Case insensitive.                                       | 
 |   por varios tags  |	 api/anuncios?tag=naves&tag=resistencia	     |   Filtro por array. Varios valores de tag                                    |                  
 
+
+
 |  Parámetro	     |      Ejemplo                                  |  Explicación                                                                 |
 |  :----------	     |   :-----------                                |  :----:                                                                      |
-|  field             |   api/anuncios?field=nombre                   |   Sólo muestra el nombre de los anuncios                                     |
+|  field             |   api/anuncios?field=nombre                   |   Sólo muestra el nombre de los anuncios.                                    |
+|  field (varios)    |   api/anuncios?field=nombre tag               |   Sólo muestra el nombre y los tags de los anuncios.                         |
 |  sort	             |   api/anuncios?sort=nombre	                 |   Muestra los anuncios por orden alfabético                                  |
 |  sort              |	 api/anuncios?sort=nombre:1 	             |   Muestra los anuncios por orden alfabético inverso                          |
 |  sort              |	 api/anuncios?sort=precio                    |   Muestra los anuncios por precio ascendente                                 |
 |  sort              |	 api/anuncios?sort=precio:-1	             |   Muestra los anuncios por precio descendente                                |
-|  sort              |	 api/anuncios?sort=venta                     |   Muestra primero los artículos en venta                                     |
-|  sort              |	 api/anuncios?sort=venta:-1	             |   Muestra primero los artículos que se buscan                                |
 |  skip              |	 api/anuncios?skip=3	                     |   Se salta 3 anuncios                                                        | 
 |  limit             |	 api/anuncios?limit=3	                     |   Sólo muestra 3 anuncios                                                    | 
 
 
 ### Ejemplos de mezcla de diferentes filtros:
 
-nombre&precioporrango&venta&tag
-precio y varios tags
-skip limit
-nombre precio por rango venta tag skip limit
+http://localhost:3000/legopop/api/anuncios?tag=microfighter&nombre=ala&precio=5-20&limit=2&sort=precio
+http://localhost:3000/legopop/api/anuncios?precio=17&tag=nave&tag=tropas
+http://localhost:3000/legopop/api/anuncios?skip=5&limit=5
+http://localhost:3000/legopop/api/anuncios?tag=microfighter&nombre=ala&precio=5-20&skip=1&limit=2&sort=precio
+http://localhost:3000/legopop/anuncios?precio=12-&nombre=ala
+http://localhost:3000/legopop/anuncios?precio=-12&nombre=ala

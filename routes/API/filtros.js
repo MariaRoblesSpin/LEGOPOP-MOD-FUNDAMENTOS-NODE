@@ -6,17 +6,24 @@ function filtros (req) {
 	const venta = req.query.venta
 	const precio = req.query.precio
 	let tag = req.query.tag
+	// const codigo = req.query.codigo
 	let skip = parseInt(req.query.skip)
 	let limit = parseInt(req.query.limit)
 	let fields = req.query.fields
 	let sort = req.query.sort
-
+console.log ('valor req.query: ', req.query)
 
     // construir los filtros 
 	const filtro = {}
 
-	if (nombre) {
+	if ( typeof nombre !== 'undefined' ) {
+
+		// expresión para que no contemple tildes ni eñes en castellano. Detalle final por si acaso
+		// /([aeio])\u0301|(u)[\u0301\u0308]/
+		//filtro.nombre = new RegExp('^' + '([aeio])\\u0301|(u)[\\u0301\\u0308]' + nombre, 'i')
+		//filtro.nombre = new RegExp('^' + '/\([aeio])\\u0301|(u)[\\u0301\\u0308]' + nombre, 'i')
 		filtro.nombre = new RegExp('^' + nombre, 'i')
+		console.log('Valor de filtro.nombre :', filtro.nombre )
 	} 
 	if (venta) {
 		filtro.venta = venta
@@ -24,21 +31,27 @@ function filtros (req) {
 	if (precio) {
 		let precioString = precio.toString()
 		let posicionGuion = precioString.indexOf('-')
-		let regexpMayorMenor = new RegExp('\d*-\d*$')
-		let regexpMayor = new RegExp('\d*-$')
-		let regexpMenor = new RegExp('-\d*')
+		let regexpMayorMenor = new RegExp('^\\d*-\d*')
+		let regexpMayor = new RegExp('d*-\$')
+		let regexpMenor = new RegExp('^\-\d*') // he puesto el circunflejo por probar pero no funciona
+		let regexpDigito = new RegExp('d*$')
+
 		
 		if (regexpMayor.test(precioString)) {
+			console.log('Entra en mayor: ', regexpMayor)
 			let valorMayor = precioString.substring(0, posicionGuion)
 			filtro.precio = { $gte: parseInt(valorMayor) }
 		} else if (regexpMenor.test(precioString)) {
+			console.log('Entra en mayor: ', regexpMenor)
 			let valorMenor = precioString.substring(posicionGuion+1)
 			filtro.precio = { $lte: parseInt(valorMenor) }
 		} else if (regexpMayorMenor.test(precioString)) {
+			console.log('Entra en rango: ', regexpMayor)
 			let valorMenor = precioString.substring(0, posicionGuion)
 			let valorMayor = precioString.substring(posicionGuion+1)
 			filtro.precio = { $gte: parseInt(valorMenor), $lte: parseInt(valorMayor)}
-		} else {
+		} else if (regexpDigito.test(precioString)) {
+			console.log('Concreto: ', regexpMayor)
 			filtro.precio = parseInt(precio)
 		}
 	}
@@ -49,16 +62,14 @@ function filtros (req) {
 		// Filtrado por varios tags en case insensitive
 		//estructura expresion regular necesaria(/^a/i)
 		if (Array.isArray(tag)){ 
-			var nuevoArray = []
  			tag.forEach((element, indice, arrayQuery) => {
 				 element = new RegExp('^' + element, 'i')
-				 nuevoArray = arrayQuery.push(element)
+				 arrayQuery.push(element)
 			 });
 			filtro.tag = { $in: tag }
 		} else if (typeof tag === 'string'){
 			let regExpTag = new RegExp('^' + tag, 'i')
 			filtro.tag = regExpTag
-			console.log('valor de regExp', regExpTag)
 		}	
 	}
 	if (sort) {
@@ -82,14 +93,10 @@ function filtros (req) {
 			sort = { precio: -1 }
 		}
 
-		if (sort === 'venta' && sort === 'venta:1'){
-			sort = { venta: 1 }
-		} else if (sort === 'venta:-1'){
-			sort = { venta: -1 }
-		}
 	}
-	if (fields) {
-		filtro.fields = fields
+	console.log('Llega a new error')
+	if (!(Object.keys(req.query).length === 0) && !nombre && !precio && !tag && !venta && !fields && !skip && !limit && !sort){
+		throw new Error ('Petición incorrecta')
 	}
 	
 

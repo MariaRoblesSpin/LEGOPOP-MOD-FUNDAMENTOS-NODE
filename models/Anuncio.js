@@ -8,7 +8,8 @@ const anuncioSchema = mongoose.Schema ({
   venta: { type: Boolean, index: true, required: true},
   precio: { type: Object, index: true, required: true},
   foto: { type: String, required: true},
-  tag: { type: [], index: true, required: true}
+  tag: { type: [], index: true, required: true},
+  codigo: { type: Number, index: true}
 }) 
 
 anuncioSchema.statics.buscar = (filtro, skip, limit,  sort, fields) => {

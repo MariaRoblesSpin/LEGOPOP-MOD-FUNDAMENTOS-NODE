@@ -12,10 +12,12 @@ router.get('/', async (req, res, next) => {
 		res.json({success: true, results: anuncios})
 		
 		// Status code 204: Content not found
-		if ( anuncios.length === 0 ) {
-			res.status(204);
-		}
+		// if ( anuncios.length === 0 ) {
+		// 	res.status(204);
+		// }
 	} catch(err) {
+		console.log('Llega a catch en anuncios', err)
+
 		next(err)
 		return
 	}
