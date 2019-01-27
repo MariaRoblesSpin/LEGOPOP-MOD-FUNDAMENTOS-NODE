@@ -12,7 +12,7 @@
         "venta": true,
         "precio": 55,
         "foto": "caza_etelar_ala_x.jpg",
-        "tag": ["R2-D2", "Nave", "Tropas rebeldes", "Resistencia", "Luke Skywalker"],
+        "tag": ["R2-D2", "Nave", "Tropas rebeldes", "Resistencia", "Luke Skywalker", "Caza Estelar", "Jedi"],
         "codigo": 75218
     },
     {
@@ -20,7 +20,7 @@
         "venta": false,
         "precio": 20,
         "foto": "nave_yoda.jpg",
-        "tag": ["Nave", "Tropas rebeldes"],
+        "tag": ["Nave", "Jedi","Tropas rebeldes"],
         "codigo": 75168
     },
     {
@@ -36,7 +36,7 @@
         "venta": true,
         "precio": 15,
         "foto": "duelo_naboo.jpg",
-        "tag": ["Darth Maul", "Qui Gon Jinn", "Obi Wan Kenobi", "Jedis", "Naboo"],
+        "tag": ["Darth Maul", "Qui Gon Jinn", "Obi Wan Kenobi", "Jedi", "Sith", "Naboo"],
         "codigo": 75169
     },
     {
@@ -106,9 +106,41 @@
     {
         "nombre": "Prototipo Avanzado Tie",
         "venta": true,
-        "precio": 17,
+        "precio": 5,
         "foto": "prototipo_avanzado_tie.jpg",
         "tag": ["Lado Oscuro", "Tropas imperiales", "Microfighter"],
         "codigo": 75128
+    },
+    {
+        "nombre": "Han Solo en carbonita",
+        "venta": true,
+        "precio": 17,
+        "foto": "han_solo_carbonita.jpg",
+        "tag": ["Han Solo", "Carbonita", "Boba Fett", "Bespin"],
+        "codigo": 75137
+    },
+    {
+        "nombre": "Ala-A vs. Silenciador TIE",
+        "venta": true,
+        "precio": 17,
+        "foto": "ala_a_silenciador_tie.jpg",
+        "tag": ["Rose", "Kylo Ren", "Silenciador TIE", "Microfighter", "Ala-a"],
+        "codigo": 75196
+    },
+    {
+        "nombre": "Caza Estelar Naboo",
+        "venta": true,
+        "precio": 17,
+        "foto": "caza_estelar_naboo.jpg",
+        "tag": ["Anakin Skywalker", "R2-D2", "Naboo", "Microfighter", "Caza Estelar", "Jedi"],
+        "codigo": 75223
+    },
+    {
+        "nombre": "Infiltrador Sith",
+        "venta": true,
+        "precio": 17,
+        "foto": "infiltrador_sith.jpg",
+        "tag": ["Darth Maul", "Sith", "Lado oscuro", "Infiltrador"],
+        "codigo": 75224
     }
 ]

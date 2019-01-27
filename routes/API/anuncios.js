@@ -23,7 +23,6 @@ router.get('/',[
 		// mayor /d*-$/
 		// rango /^\d*-d*/
 		// digito  /d*$/
-		console.log('Pasa por anuncios!!!')
 		const anuncios = await filtros(req)
 		res.json({success: true, results: anuncios})
 		
@@ -38,14 +37,13 @@ router.get('/',[
 })
 router.get('/tags', async (req, res, next) => {
 	try {
-	console.log('Pasa por tags')
-	const valoresTags = await Anuncio.distinct('tag')
-	res.json({success: true, results: valoresTags})
+		const valoresTags = await Anuncio.distinct('tag')
+		res.json({success: true, results: valoresTags})
 	
-	// Status code 204: Content not found
-	if ( valoresTags.length === 0 ) {
-		res.status(204);
-	}
+		// Status code 204: Content not found
+		if ( valoresTags.length === 0 ) {
+			res.status(204)
+		}
 	
 	} catch(err) {
 		next(err)

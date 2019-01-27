@@ -36,7 +36,7 @@ function askUser(question){
 			resolve(answer)
 			return
 		})
-})
+	})
 }
 
 async function initDB(){
